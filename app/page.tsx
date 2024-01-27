@@ -31,8 +31,9 @@ export default function Home() {
   const tokenizeText = () => {
     // split text and filter out common words
     const result = text
+      .toLowerCase()
       .split(/\W+/)
-      .filter((word) => !stopwords.includes(word.trim().toLowerCase()));
+      .filter((word) => !stopwords.includes(word.trim()));
     setTokens(result);
     generateFrequencies(result);
   };

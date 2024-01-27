@@ -1,10 +1,23 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { ButtonProps } from "../types";
 
-const Button = ({ buttonText, clickHandler }: ButtonProps) => {
+const Button = ({ buttonText, clickHandler, size }: ButtonProps) => {
+  const [btnWidth, setBtnWith] = useState<number | string>("fit");
+
+  useEffect(() => {
+    if (size === "large") {
+      setBtnWith("full");
+    } else if (size === "medium") {
+      setBtnWith("2/3");
+    } else {
+      setBtnWith("fit");
+    }
+  }, [size]);
+
   return (
     <button
-      className="bg-primary text-white font-semibold shadow-2xl p-3 px-6 rounded-full w-3/6"
+      className={`bg-primary text-white shadow-2xl p-3 px-6 rounded-full w-${btnWidth}`}
       onClick={clickHandler}>
       {buttonText}
     </button>

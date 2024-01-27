@@ -23,4 +23,5 @@ export interface WordFrequencyListProps {
 export interface ButtonProps {
   buttonText: string;
   clickHandler: () => void;
+  size: "small" | "large" | "medium";
 }

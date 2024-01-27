@@ -2,14 +2,11 @@
 import TextInput from "./components/TextInput";
 import WordFrequencyListWrapper from "./components/WordFrequencyListWrapper";
 import { useState } from "react";
-import {
-  Token,
-  WordFrequency,
-  WordFrequencyListProps,
-  WordFrequencyProps,
-} from "./types";
+import { Token, WordFrequency } from "./types";
 import { stopwords } from "./data/stopw-words";
 import WordFrequencyList from "./components/WordFrequencyList";
+import WordCloud from "./components/WordCloud";
+import Button from "./components/Button";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -27,7 +24,6 @@ export default function Home() {
             : 1)
       );
     }
-    console.log("tokens", generatedFreqency);
     setFrequencies(generatedFreqency);
   };
 
@@ -37,21 +33,37 @@ export default function Home() {
     const result = text
       .split(" ")
       .filter((word) => !stopwords.includes(word.toLowerCase()));
+    console.log(result);
     setTokens(result);
     generateFrequencies();
   };
 
   return (
-    <main className="flex min-h-screen flex-col md:flex-row items-start justify-between gap-4 p-0">
-      <TextInput
-        tokens={tokens}
-        text={text}
-        setText={setText}
-        textTokenizer={tokenizeText}
-      />
-      <WordFrequencyListWrapper>
-        <WordFrequencyList words={frequencies} />
-      </WordFrequencyListWrapper>
+    <main className="flex min-h-screen flex-col items-start gap-24">
+      <div className="flex w-full flex-col md:flex-row items-start justify-between gap-4 p-0">
+        <TextInput
+          tokens={tokens}
+          text={text}
+          setText={setText}
+          textTokenizer={tokenizeText}
+        />
+        {tokens.length > 0 && (
+          <WordFrequencyListWrapper>
+            <WordFrequencyList words={frequencies} />
+          </WordFrequencyListWrapper>
+        )}
+      </div>
+      {tokens.length > 0 && (
+        <div className="w-full flex flex-col gap-5">
+          <h2>Generated cloud</h2>
+          <WordCloud />
+          <Button
+            buttonText="Save cloud"
+            size={"small"}
+            clickHandler={() => {}}
+          />
+        </div>
+      )}
     </main>
   );
 }

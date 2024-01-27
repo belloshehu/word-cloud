@@ -23,8 +23,12 @@ const TextInput = ({
 
       {/* Button and wordcount wrapper */}
       <div className="flex justify-between items-center w-full">
-        <Button buttonText="Generate cloud" clickHandler={textTokenizer} />
-        <p className="p-2 px-4 text-sm bg-slate-100 rounded-full">
+        <Button
+          buttonText="Generate cloud"
+          clickHandler={textTokenizer}
+          size="medium"
+        />
+        <p className="p-2 px-4 text-sm  rounded-full border-[1px] border-slate-600">
           {tokens.length} words
         </p>
       </div>

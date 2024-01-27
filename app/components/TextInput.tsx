@@ -1,6 +1,4 @@
-"use client";
-
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import { TextInputProps } from "../types";
 import Button from "./Button";
 
@@ -13,11 +11,11 @@ const TextInput = ({
   return (
     <div className="w-full flex flex-col gap-10 p-0 justify-start flex-3">
       <textarea
-        className="rounded-md bg-slate-100 p-5 shadow-lg w-full h-[60vh] border-primary border-[1px] focus:border-2 outline-none"
+        className="rounded-md  p-5 shadow-lg w-full h-[60vh] border-primary border-[1px] focus:border-2 outline-none"
         rows={20}
         cols={50}
         minLength={1000}
-        placeholder="Enter text here"
+        placeholder="Enter text here to generate word cloud"
         value={text}
         onChange={(e) => setText(e.target.value)}></textarea>
 

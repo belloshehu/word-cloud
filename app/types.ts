@@ -25,3 +25,12 @@ export interface ButtonProps {
   clickHandler: () => void;
   size: "small" | "large" | "medium";
 }
+
+export interface WordData {
+  text: string;
+  value: number;
+}
+
+export interface WordCloudProps {
+  data: WordData[];
+}

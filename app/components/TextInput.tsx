@@ -20,7 +20,7 @@ const TextInput = ({
         onChange={(e) => setText(e.target.value)}></textarea>
 
       {/* Button and wordcount wrapper */}
-      <div className="flex justify-between items-center w-full">
+      <div className="flex justify-between items-center w-full gap-5">
         <Button
           buttonText="Generate cloud"
           clickHandler={textTokenizer}

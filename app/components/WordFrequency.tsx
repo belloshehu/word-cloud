@@ -5,7 +5,7 @@ import { WordFrequencyProps } from "../types";
 const WordFrequency = ({ word, frequency }: WordFrequencyProps) => {
   return (
     <li className="w-full flex justify-between items-center bg-white p-1 border-b-2 border-slate-100">
-      <p className="bg-primary p-1 px-3 text-sm rounded-full text-white ">
+      <p className="bg-gradient-to-r from-slate-500 to-primary p-1 px-3 text-sm rounded-full text-white ">
         {word}
       </p>
       <small className="px-3 py-1 ring-1 ring-primary rounded-full">

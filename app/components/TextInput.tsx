@@ -2,8 +2,14 @@
 
 import React, { memo, useState } from "react";
 import { TextInputProps } from "../types";
+import Button from "./Button";
 
-const TextInput = ({ text, setText }: TextInputProps) => {
+const TextInput = ({
+  text,
+  tokens,
+  setText,
+  textTokenizer,
+}: TextInputProps) => {
   return (
     <div className="w-full flex flex-col gap-10 p-0 justify-start flex-3">
       <textarea
@@ -17,11 +23,9 @@ const TextInput = ({ text, setText }: TextInputProps) => {
 
       {/* Button and wordcount wrapper */}
       <div className="flex justify-between items-center w-full">
-        <button className="bg-primary text-white font-semibold shadow-2xl p-3 px-6 rounded-full w-3/6">
-          Generate
-        </button>
+        <Button buttonText="Generate cloud" clickHandler={textTokenizer} />
         <p className="p-2 px-4 text-sm bg-slate-100 rounded-full">
-          {text.split(" ").length} words
+          {tokens.length} words
         </p>
       </div>
     </div>

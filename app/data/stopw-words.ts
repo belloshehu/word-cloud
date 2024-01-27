@@ -6,6 +6,7 @@ export const stopwords = [
   "we",
   "our",
   "ours",
+  "us",
   "ourselves",
   "you",
   "your",

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Main container wrapper the entire body content
 const Container = ({
   children,
 }: Readonly<{

@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import { WordCloudProps, WordData } from "../types";
 import WordCloud from "react-d3-cloud";
@@ -9,7 +8,7 @@ import { saveSvgAsPng } from "save-svg-as-png";
 const WordCloudWrapper = ({ data }: WordCloudProps) => {
   const [wordData, setWordData] = useState<WordData[]>([]);
   const [maxFrequency, setMaxFrequency] = useState(100);
-  const wordCloudRef = useRef<Element | null>(null);
+  const wordCloudRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // get maximum frequency

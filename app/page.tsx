@@ -23,6 +23,7 @@ export default function Home() {
             : 1)
       );
     }
+    console.log(generatedFreqency);
     setFrequencies(generatedFreqency);
   };
 
@@ -30,8 +31,8 @@ export default function Home() {
   const tokenizeText = () => {
     // split text and filter out common words
     const result = text
-      .split(" ")
-      .filter((word) => !stopwords.includes(word.toLowerCase()));
+      .split(/\W+/)
+      .filter((word) => !stopwords.includes(word.trim().toLowerCase()));
     setTokens(result);
     generateFrequencies(result);
   };

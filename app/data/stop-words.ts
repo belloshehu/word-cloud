@@ -1,4 +1,5 @@
 export const stopwords = [
+  "",
   "i",
   "me",
   "my",

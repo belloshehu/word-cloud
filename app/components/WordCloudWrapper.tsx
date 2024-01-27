@@ -44,7 +44,7 @@ const WordCloudWrapper = ({ data }: WordCloudProps) => {
         <WordCloud
           data={wordData}
           width={1000}
-          height={500}
+          height={450}
           fontSize={fontSize}
           rotate={rotate}
           padding={3}

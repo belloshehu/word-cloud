@@ -42,3 +42,6 @@ Follow the following steps to run the application on your local machine:
 
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see
   the result.
+
+<img width="2000" height="900" alt="wordcloud" src="https://github.com/user-attachments/assets/71290d93-fe44-4a85-a4a9-77fe7ea300ca" />
+
